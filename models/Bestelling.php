@@ -56,6 +56,9 @@ class Bestelling extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Medewerker::className(), ['id' => 'medewerker_id']);
     }
-
+    public function getMenu()
+    {
+        return $this->hasOne(Menu::className(), ['id' => 'menu_id']);
+    }
     
 }

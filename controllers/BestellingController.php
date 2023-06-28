@@ -48,11 +48,11 @@ class BestellingController extends Controller
         $dataProvider = $searchModel->search($this->request->queryParams);
         $statusList = ['besteld'=>'is besteld', 'klaar'=>'is klaar', 'betaald'=>'is betaald'];
         $medewerkers = Medewerker::find()->all();
-        $menu = Menu::find()->all();
-        $menuList = ArrayHelper::map($menu, 'id', 'naam');
-
-
         $medewerkerList = ArrayHelper::map($medewerkers, 'id', 'naam');
+
+        $menu = Menu::find()->all();
+        $menuList = ArrayHelper::map($menu, 'ID', 'Naam');
+
 
         // print_r($medewerkerList);
         // exit;
@@ -63,7 +63,7 @@ class BestellingController extends Controller
             'dataProvider' => $dataProvider,
             'statusList' => $statusList,
             'medewerkers'=>$medewerkerList,
-            'menu'=>$menuList
+            'menuList'=>$menuList
 
         ]);
     }

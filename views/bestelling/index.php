@@ -37,11 +37,17 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filter'    => $medewerkers,
                 'value'     => 'medewerkers.naam'
             ],
+            [
+                'attribute' => 'menu_id',
+                  'label'     => 'Bestelling',
+                'filter'    => $menuList,
+                'value'     => 'menu.Naam'
+            ],
 
             'id',
             // 'medewerker_id',
             'naam',
-            'menu_id',
+            // 'menu_id',
                         [
                 'attribute'=>'status',
                 'filter'=>$statusList,
